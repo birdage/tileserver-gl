@@ -81,7 +81,7 @@ module.exports = function(options, repo, params, id, reportTiles, reportFont) {
         query = '?' + queryParams.join('&');
       }
       return url.replace(
-          'local://', (baseURL ? baseURL : req.protocol + '://' + req.headers.host + '/') + query;
+          'local://', (baseURL ? baseURL : req.protocol + '://' + req.headers.host) + '/') + query;
     };
 
     var styleJSON_ = clone(styleJSON);
