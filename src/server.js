@@ -190,7 +190,7 @@ function start(opts) {
         version: styleJSON.version,
         name: styleJSON.name,
         id: id,
-        url: (baseURL ? baseURL : req.protocol + '://' + req.headers.host +
+        url: (baseURL ? baseURL : req.protocol + '://' + req.headers.host) +
              '/styles/' + id + '/style.json' + query
       });
     });
