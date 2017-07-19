@@ -6,7 +6,6 @@ var advancedPool = require('advanced-pool'),
     util = require('util'),
     zlib = require('zlib');
 
-var baseURL = options.baseURL;
 // sharp has to be required before node-canvas
 // see https://github.com/lovell/sharp/issues/371
 var sharp = require('sharp');
@@ -38,6 +37,8 @@ mbgl.on('message', function(e) {
 
 module.exports = function(options, repo, params, id, dataResolver) {
   var app = express().disable('x-powered-by');
+
+  var baseURL = options.baseURL;
 
   var maxScaleFactor = Math.min(Math.floor(options.maxScaleFactor || 3), 9);
   var scalePattern = '';

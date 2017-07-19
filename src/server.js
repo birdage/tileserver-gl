@@ -67,7 +67,6 @@ function start(opts) {
 
   var options = config.options || {};
   var paths = options.paths || {};
-
   var baseURL = options.baseURL;
   options.paths = paths;
   paths.root = path.resolve(
