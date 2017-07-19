@@ -3,8 +3,6 @@
 var path = require('path'),
     fs = require('fs');
 
-var baseURL = options.baseURL;
-
 var clone = require('clone'),
     express = require('express');
 
@@ -13,6 +11,8 @@ module.exports = function(options, repo, params, id, reportTiles, reportFont) {
   var app = express().disable('x-powered-by');
 
   var styleFile = path.resolve(options.paths.styles, params.style);
+
+  var baseURL = options.baseURL;
 
   var styleJSON = clone(require(styleFile));
   Object.keys(styleJSON.sources).forEach(function(name) {
