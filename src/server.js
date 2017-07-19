@@ -7,8 +7,6 @@ process.env.UV_THREADPOOL_SIZE =
 var fs = require('fs'),
     path = require('path');
 
-var baseURL = options.baseURL;
-
 var base64url = require('base64url'),
     clone = require('clone'),
     cors = require('cors'),
@@ -69,6 +67,8 @@ function start(opts) {
 
   var options = config.options || {};
   var paths = options.paths || {};
+
+  var baseURL = options.baseURL;
   options.paths = paths;
   paths.root = path.resolve(
     configPath ? path.dirname(configPath) : process.cwd(),
