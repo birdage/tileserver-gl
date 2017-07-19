@@ -4,8 +4,6 @@ var fs = require('fs'),
     path = require('path'),
     zlib = require('zlib');
 
-var baseURL = options.baseURL;
-
 var clone = require('clone'),
     express = require('express'),
     mbtiles = require('@mapbox/mbtiles'),
@@ -22,6 +20,8 @@ var utils = require('./utils');
 
 module.exports = function(options, repo, params, id, styles) {
   var app = express().disable('x-powered-by');
+
+  var baseURL = options.baseURL;
 
   var mbtilesFile = path.resolve(options.paths.mbtiles, params.mbtiles);
   var tileJSON = {
